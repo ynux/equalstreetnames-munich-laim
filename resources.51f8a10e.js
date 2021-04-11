@@ -70800,7 +70800,10 @@ function popupDetails(details) {
     htmlDetails += "<a target=\"_blank\" href=\"" + wikipedia.url + "\">" + ("Wikipedia (" + wikipedia.lang.toUpperCase() + ")") + "</a> + ";
   }
 
-  htmlDetails += "<a target=\"_blank\" href=\"https://www.wikidata.org/wiki/" + wikidata + "\">Wikidata</a>";
+  if (wikidata !== 'none') {
+    htmlDetails += "<a target=\"_blank\" href=\"https://www.wikidata.org/wiki/" + wikidata + "\">Wikidata</a>";
+  }
+
   htmlDetails += "</div>";
   htmlDetails += "</div>";
 
@@ -71274,7 +71277,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57644" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65090" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
